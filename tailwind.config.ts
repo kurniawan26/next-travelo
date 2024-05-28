@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'hero-header': "url('/images/home/header.png')",
+      },
       fontFamily: {
         sans: 'var(--font-roboto)',
         label: 'var(--font-montserrat)',

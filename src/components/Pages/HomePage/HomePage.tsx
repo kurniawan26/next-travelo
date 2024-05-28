@@ -7,15 +7,26 @@ export default function Home() {
   const router = useRouter()
 
   return (
-    <div className="container flex justify-center flex-col items-center">
-      <p className="text-xl">
-        Hello World, this is home
-      </p>
-      <button className="p-4 bg-blue-400 text-white" onClick={
-        () => router.push('/login')
-      }>
-        Go To Login Page
-      </button>
-    </div>
+    <section className="bg-hero-header mt-[85px] bg-right-top bg-no-repeat h-[764px]">
+      <div className='max-w-screen-xl mx-auto'>
+        <div className="flex flex-col pt-[112px] pb-[58px]">
+          <div className="flex flex-col mb-[174px]">
+
+            <h1 className="text-heading-2 font-bold font-label text-gray-100 w-[500px] mb-8" >
+              Jelajahi Dunia Yang Indah Dengan Satu Sentuhan
+            </h1>
+
+            <p className="text-heading-3 font-sans text-gray-70 w-[526px] mb-7">
+              Jelajahi dunia yang indah dengan satu sentuhan dengan pesan tiket
+              di Travel kamu akan dapatkan pelayanan terbaik untuk wisata
+              liburanmu kemana saja dan kapan saja
+            </p>
+
+          </div>
+
+
+        </div>
+      </div>
+    </section>
   );
 }

@@ -1,5 +1,6 @@
 'use client'
 
+import InfoCounter from "@/components/Shared/InfoCounter";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -22,6 +23,13 @@ export default function Home() {
               liburanmu kemana saja dan kapan saja
             </p>
 
+          </div>
+
+          <div className="flex gap-40 mx-auto">
+            <InfoCounter count={30} label="Negara" />
+            <InfoCounter count={1500} label="Penginapan" />
+            <InfoCounter count={100} label="Wisata" />
+            <InfoCounter count={50000} label="Pelanggan" />
           </div>
 
 

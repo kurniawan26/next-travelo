@@ -4,6 +4,7 @@ import Carousel from 'react-multi-carousel'
 import Card from './components/Card'
 
 import 'react-multi-carousel/lib/styles.css'
+import { mockDataTour } from './__mocks__'
 
 function PromotionCarousel() {
   return (
@@ -51,30 +52,7 @@ function PromotionCarousel() {
           }
         }}
       >
-        <Card
-          location='Borobudur'
-          region='Magelang'
-          price={7700000}
-          percentage={10}
-          description='Untuk 2 Orang, tiket pesawat, Tempat penginapan 5 malam, tour guide'
-          finalPrice={6930000}
-          timeAbroad='27-11-2020 10:00' />
-        <Card
-          location='Borobudur'
-          region='Magelang'
-          price={7700000}
-          percentage={10}
-          description='Untuk 2 Orang, tiket pesawat, Tempat penginapan 5 malam, tour guide'
-          finalPrice={6930000}
-          timeAbroad='27-11-2020 10:00' />
-        <Card
-          location='Borobudur'
-          region='Magelang'
-          price={7700000}
-          percentage={10}
-          description='Untuk 2 Orang, tiket pesawat, Tempat penginapan 5 malam, tour guide'
-          finalPrice={6930000}
-          timeAbroad='27-11-2020 10:00' />
+        {mockDataTour.map(item => (<Card key={item.id} {...item} />))}
       </Carousel>
     </>
   )

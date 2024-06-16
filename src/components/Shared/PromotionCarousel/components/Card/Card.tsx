@@ -1,3 +1,5 @@
+import { discontFormater, priceFormater } from '@/utils';
+import dayjs from 'dayjs';
 import Image from 'next/image'
 import React from 'react'
 
@@ -5,14 +7,14 @@ interface CardPropsData {
   location: string;
   region: string;
   price: number;
-  percentage: number;
-  finalPrice: number;
+  percentage?: number;
   description: string;
-  timeAbroad: string;
+  time: number;
+  isDiscount?: boolean;
 }
 
 function Card(props: CardPropsData) {
-  const { location, region, price, percentage, finalPrice, description, timeAbroad } = props
+  const { location, region, price, percentage = 0, isDiscount, description, time } = props
 
   return (
     <article className="bg-white shadow-lg rounded-xl overflow-hidden w-[500px] h-[312px] flex">
@@ -30,15 +32,17 @@ function Card(props: CardPropsData) {
         </p>
         <p className="mb-4 text-heading4 text-gray-70">{region}</p>
 
-        <div className="flex gap-1">
-          <p className="line-through text-heading-5 text-gray-70">
-            Rp. {price}
-          </p>
-          <p className="font-bold text-red-100 text-heading-5">{percentage}%</p>
-        </div>
+        {
+          isDiscount && <div className="flex gap-2">
+            <p className="line-through text-heading-5 text-gray-70">
+              {priceFormater(price)}
+            </p>
+            <p className="font-bold text-red-100 text-heading-5">{percentage}%</p>
+          </div>
+        }
 
         <p className="text-[16px] font-bold text-gray-100 mb-4">
-          Rp. {finalPrice}
+          {priceFormater(percentage > 0 ? discontFormater(price, percentage) : price)}
         </p>
 
         <p className="mb-4 text-heading-5 text-gray-70">
@@ -46,7 +50,7 @@ function Card(props: CardPropsData) {
         </p>
 
         <p className="mb-4 text-heading-5 text-gray-70">
-          {timeAbroad}
+          Berangkat : {dayjs.unix(time).format('DD-MM-YYYY HH:mm')}
         </p>
 
         {/* NEXTNYA TAMBAHKAN KOMPONEN BUTTON DISINI */}

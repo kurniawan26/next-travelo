@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${montserrat.variable}`}>
+      <body className={`${roboto.variable} ${montserrat.variable} font-sans`}>
         <Header />
 
         {children}

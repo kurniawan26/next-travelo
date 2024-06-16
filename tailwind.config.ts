@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'hero-header': "url('/images/home/header.png')",
+        "blue-section" : "url('/images/home/blue-bg-second-section.svg')",
       },
       fontFamily: {
         sans: 'var(--font-roboto)',
